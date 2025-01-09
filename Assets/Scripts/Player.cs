@@ -55,6 +55,10 @@ public class Player : MonoBehaviour
             transform.position += forward;
             playerAnimator.SetTrigger("Walking");
 
+        }else if(Input.GetKey(KeyCode.S))
+        {
+            Vector3 back = transform.up * _speed * Time.deltaTime;
+            transform.position -= back;
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -71,6 +75,10 @@ public class Player : MonoBehaviour
         {
             playerAnimator.SetTrigger("Attack");
             attackPoint.SetActive(true);
+        }
+        else
+        {
+            attackPoint.SetActive(false);
         }
 
     }
